@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.angular/
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Backend
+apps/backend/dist/
+apps/backend/node_modules/
+
+# Frontend
+apps/frontend/dist/
+apps/frontend/.angular/
+
+# Test
+coverage/
+.nyc_output/

@@ -1,0 +1,116 @@
+// Login page
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.login-container { width: 100%; max-width: 440px; }
+
+.login-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.login-header { text-align: center; margin-bottom: 40px; }
+
+.login-logo {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--emerald), var(--gold));
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 auto 20px;
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.3);
+}
+
+.login-title { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+.login-subtitle { font-size: 14px; color: var(--text-muted); }
+
+.theme-toggle-float {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 45px;
+  height: 45px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-float:hover {
+  background: var(--glass-hover);
+  border-color: var(--emerald-light);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--emerald), var(--gold));
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(5, 150, 105, 0.3);
+}
+
+@media (max-width: 992px) {
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-left: var(--sidebar-width);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: var(--emerald-light);
+  transition: color var(--transition-fast);
+}
+
+.site-footer a:hover { color: var(--gold); }
+
+@media (max-width: 992px) {
+  .site-footer { margin-left: 0; }
+}

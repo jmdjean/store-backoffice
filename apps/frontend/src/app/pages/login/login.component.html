@@ -1,0 +1,64 @@
+<div class="background"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="login-page">
+  <button type="button" class="theme-toggle-float" (click)="theme.toggle()" title="Alternar tema">
+    @if (theme.currentTheme() === 'light') {
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    } @else {
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/><path d="M12 20v2"/>
+        <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+        <path d="M2 12h2"/><path d="M20 12h2"/>
+        <path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/>
+      </svg>
+    }
+  </button>
+
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-logo">S</div>
+        <h1 class="login-title">Bem-vindo</h1>
+        <p class="login-subtitle">Entre para continuar no Store Backoffice</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form-label" for="email">E-mail</label>
+          <input type="email" id="email" class="form-input" formControlName="email" placeholder="Seu e-mail">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Senha</label>
+          <input type="password" id="password" class="form-input" formControlName="password" placeholder="Sua senha">
+        </div>
+
+        <div class="form-row" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+          <label class="checkbox-label" style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-secondary); cursor: pointer;">
+            <input type="checkbox" formControlName="remember">
+            Lembrar de mim
+          </label>
+          <a routerLink="/forgot" class="forgot-link" style="font-size: 14px; color: var(--emerald-light);">Esqueci a senha</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+          Entrar
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </form>
+
+      <p class="login-footer" style="text-align: center; font-size: 14px; color: var(--text-muted); margin-top: 24px;">
+        <a routerLink="/">Voltar ao dashboard</a>
+      </p>
+    </div>
+  </div>
+</div>

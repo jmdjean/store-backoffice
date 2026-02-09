@@ -1,0 +1,26 @@
+{
+  "name": "store-backoffice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Store Backoffice - Monorepo (Angular + Node.js)",
+  "scripts": {
+    "frontend": "npm run start --workspace=apps/frontend",
+    "frontend:build": "npm run build --workspace=apps/frontend",
+    "frontend:test": "npm run test --workspace=apps/frontend",
+    "backend": "npm run start:dev --workspace=apps/backend",
+    "backend:build": "npm run build --workspace=apps/backend",
+    "backend:start": "npm run start --workspace=apps/backend",
+    "install:all": "npm install && npm run install:frontend && npm run install:backend",
+    "install:frontend": "npm install --workspace=apps/frontend",
+    "install:backend": "npm install --workspace=apps/backend"
+  },
+  "workspaces": [
+    "apps/frontend",
+    "apps/backend"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
